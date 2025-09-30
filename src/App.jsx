@@ -6,6 +6,7 @@ import { NavBar } from './components/NavBar';
 import { MobileMenu } from './components/MobileMenu';
 import { Home } from './components/sections/Home';
 import { About } from './components/sections/About';
+import { Projects } from './components/sections/Projects';
 
 function App() {
   const [isLoading, setIsLoading] = useState(false)
@@ -20,6 +21,7 @@ function App() {
 
       <Home/>
       <About/>
+      <Projects/>
 
     </div>
     </>
