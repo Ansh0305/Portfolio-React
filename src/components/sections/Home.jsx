@@ -13,11 +13,7 @@ export const Home = () => {
                 </h1>
 
                 <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat
-                    reprehenderit omnis ipsam delectus, exercitationem quaerat cupiditate ab
-                    doloribus! Veritatis reiciendis fuga facere hic mollitia et corrupti
-                    vero repellat quam nihil sit, perspiciatis reprehenderit earum a rem
-                    voluptas iusto alias quod itaque deleniti porro maxime amet.
+                        A passionate full stack developer specializing in React and modern web tech. I love building sleek, responsive apps and solving challenging problems through clean code and smart algorithms. Always learning and creating, I'm gearing up to make an impact in the software world. Let’s connect and build something amazing!
                 </p>
 
                 <div className="flex justify-center space-x-4">

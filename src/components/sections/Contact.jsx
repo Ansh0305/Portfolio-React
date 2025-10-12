@@ -84,6 +84,44 @@ export const Contact = () => {
                             Send Message
                         </button>
                     </form>
+                    <div className="mt-10 flex justify-center gap-10 text-white">
+                        <a
+                            href="https://github.com/Ansh0305"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center space-x-2 hover:text-gray-300"
+                            aria-label="GitHub"
+                        >
+                            <svg
+                                className="w-7 h-7"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path d="M12 0C5.373 0 0 5.373 0 12a12 12 0 008.21 11.386c.6.11.82-.26.82-.577v-2.234c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.088-.745.084-.73.084-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.833 2.807 1.303 3.492.997.108-.776.418-1.303.76-1.603-2.665-.304-5.466-1.334-5.466-5.931 0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.51 11.51 0 013.003-.405c1.02.005 2.047.137 3.002.404 2.29-1.552 3.295-1.23 3.295-1.23.655 1.653.243 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.804 5.624-5.475 5.922.43.368.814 1.096.814 2.213v3.287c0 .32.218.694.825.576A12.003 12.003 0 0024 12c0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a
+                            href="https://linkedin.com/in/anshsirigiri"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center space-x-2 text-blue-500 hover:text-blue-400"
+                            aria-label="LinkedIn"
+                        >
+                            <svg
+                                className="w-7 h-7"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.025-3.037-1.85-3.037-1.853 0-2.136 1.445-2.136 2.938v5.669H9.354V9h3.415v1.561h.049c.476-.9 1.637-1.85 3.369-1.85 3.6 0 4.27 2.368 4.27 5.455v6.286zM5.337 7.433c-1.144 0-2.072-.93-2.072-2.077 0-1.15.928-2.08 2.072-2.08 1.15 0 2.076.93 2.076 2.08 0 1.145-.927 2.076-2.076 2.076zm1.777 13.02H3.559V9h3.555v11.452zM22.225 0H1.771C.792 0 0 .782 0 1.748v20.504C0 23.215.792 24 1.771 24h20.451C23.2 24 24 23.215 24 22.252V1.749C24 .782 23.2 0 22.225 0z" />
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
                 </div>
             </RevealOnScroll>
         </section>
