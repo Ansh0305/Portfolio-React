@@ -4,9 +4,9 @@ import emailjs from "emailjs-com";
 
 export const Contact = () => {
     const [formData, setFormData] = useState({
-        name: "",
+        from_name: "",
         email: "",
-        message: "",
+        from_message: "",
     });
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,7 +19,7 @@ export const Contact = () => {
             )
             .then((result) => {
                 alert("Message Sent!");
-                setFormData({ name: "", email: "", message: "" });
+                setFormData({ from_name: "", email: "", from_message: "" });
             })
             .catch(() => alert("Oops! Something went wrong. Please try again."));
     };
@@ -39,13 +39,13 @@ export const Contact = () => {
                             <input
                                 type="text"
                                 id="name"
-                                name="name"
+                                name="from_name"
                                 required
-                                value={formData.name}
+                                value={formData.from_name}
                                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
                                 placeholder="Name"
                                 onChange={(e) =>
-                                    setFormData({ ...formData, name: e.target.value })
+                                    setFormData({ ...formData, from_name: e.target.value })
                                 }
                             />
                         </div>
@@ -66,14 +66,14 @@ export const Contact = () => {
                         <div className="relative">
                             <textarea
                                 id="message"
-                                name="message"
+                                name="from_message"
                                 rows={5}
                                 required
-                                value={formData.message}
+                                value={formData.from_message}
                                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
                                 placeholder="Your Message.."
                                 onChange={(e) =>
-                                    setFormData({ ...formData, message: e.target.value })
+                                    setFormData({ ...formData, from_message: e.target.value })
                                 }
                             />
                         </div>
