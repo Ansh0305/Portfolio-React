@@ -23,9 +23,6 @@ export const Contact = () => {
             })
             .catch(() => alert("Oops! Something went wrong. Please try again."));
     };
-    console.log(import.meta.env.VITE_SERVICE_ID);
-    console.log(import.meta.env.VITE_TEMPLATE_ID);
-    console.log(import.meta.env.VITE_PUBLIC_KEY);
 
 
     return (
