@@ -1,7 +1,7 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = () => {
-    const programmingLanguages = ["C/C++", "Java", "Python", "SQL"];
+    const programmingLanguages = ["C/C++", "Java", "Python", "JavaScript"];
     const webDevelopment = ["React.js","Next.js", "JavaScript",  "Express.js", "Node.js", "REST API's", "Tailwind CSS", "Bootstrap", "Material UI"];
     const databases = ["MySQL", "MongoDB", "PostgreSQL", "Redis"];
 
@@ -79,11 +79,11 @@ export const About = () => {
                                 </li>
                                 <li>
                                     <strong>Intermediate in MPC </strong> -Sri Chaitanya Junior College, Hyderabad (2020-2022)
-                                    <div> <strong>Percentage:</strong> 7.5% </div>
+                                    <div> <strong>Percentage:</strong> 75% </div>
                                 </li>
                                 <li>
                                     <strong>High School</strong> -Sankara Vidyalaya, Hyderabad (2020)
-                                    <div> <strong>Percentage:</strong> 9.0% </div>
+                                    <div> <strong>Percentage:</strong> 90% </div>
                                 </li>
 
                                 <li>Relevant courses: <strong>Data Structures & Algorithms, Database Management, System Design, OOPS</strong> </li>
