@@ -49,8 +49,8 @@ export const Projects = () => {
                 </div>
 
                 <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59, 130, 246, 0.1)] transition-all">
-                    <h3 className="text-xl font-bold mb-2">AI Email-Writer</h3>
-                        <p className="text-gray-400 mb-4">This project is a Spotify-inspired music streaming clone developed using only HTML, CSS, and vanilla JavaScript. It replicates the core interface and functionalities of the Spotify platform while operating entirely in the browser. All songs are stored locally, enabling fast playback without external APIs or databases.</p>
+                        <h3 className="text-xl font-bold mb-2">AI-EmailGenerator</h3>
+                        <p className="text-gray-400 mb-4">The AI-EmailGenerator is a powerful, intelligent web application designed to streamline and automate the process of writing professional emails. Built with React and bundled using Vite for a fast development experience and dynamic user interface, it leverages cutting-edge Large Language Models (LLMs) to generate email drafts from simple user prompts.</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                         {["React", "Node.js", "TailwindCSS"].map((skills, key) => (
                             <span
@@ -62,7 +62,7 @@ export const Projects = () => {
                     </div>
 
                     <div className="flex justify-between items-center">
-                            <a href="https://github.com/Ansh0305/AI-EmailGenerator" target="_blank" className="text-blue-400 hover:text-blue-300 transition-colors my-4">Under Construction🚧</a>
+                            <a href="https://github.com/Ansh0305/AI-EmailGenerator" target="_blank" className="text-blue-400 hover:text-blue-300 transition-colors my-4">View Code →</a>
                     </div>
                 </div>
 
