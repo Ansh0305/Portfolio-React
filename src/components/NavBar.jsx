@@ -1,15 +1,15 @@
 import { useEffect } from "react";
 
-export const NavBar = ({menuOpen, setMenuOpen}) => {
+export const NavBar = ({ menuOpen, setMenuOpen }) => {
 
-    useEffect(() => {
-        document.body.style.overflow = menuOpen ? "hidden" : ""
-    },[menuOpen])
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : ""
+  }, [menuOpen])
 
 
   return (
     <nav
-      className="fixed top-0 w-full z-40 bg-[rgba(10, 10, 10, 0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg"
+      className="fixed top-0 w-full z-40 bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg"
     >
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
@@ -47,9 +47,10 @@ export const NavBar = ({menuOpen, setMenuOpen}) => {
               Contact
             </a>
             <a
-              href="/Sirigiri-Sai-Ansh-Raj-Resume.pdf"
-              className=" bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover: -translate-y-0.5 hover: shadow-[0_0_15px_rgba(59, 130,246, 0.4)]"
+              href="/Sirigiri Sai Ansh Raj Resume.pdf"
+              className="bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Download CV
             </a>

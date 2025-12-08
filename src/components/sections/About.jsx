@@ -2,7 +2,7 @@ import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = () => {
     const programmingLanguages = ["C/C++", "Java", "Python", "JavaScript"];
-    const webDevelopment = ["React.js","Next.js", "JavaScript",  "Express.js", "Node.js", "REST API's", "Tailwind CSS", "Bootstrap", "Material UI"];
+    const webDevelopment = ["React.js", "Next.js", "JavaScript", "Express.js", "Node.js", "REST API's", "Tailwind CSS", "Bootstrap", "Material UI"];
     const databases = ["MySQL", "MongoDB", "PostgreSQL", "Redis"];
 
     return (
@@ -29,7 +29,7 @@ export const About = () => {
                                     {programmingLanguages.map((skill, key) => (
                                         <span
                                             key={key}
-                                            className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59, 130, 246, 0.2)] transition"
+                                            className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
                                         >
                                             {skill}
                                         </span>
@@ -43,7 +43,7 @@ export const About = () => {
                                     {webDevelopment.map((skill, key) => (
                                         <span
                                             key={key}
-                                            className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59, 130, 246, 0.2)] transition"
+                                            className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
                                         >
                                             {skill}
                                         </span>
@@ -57,7 +57,7 @@ export const About = () => {
                                     {databases.map((skill, key) => (
                                         <span
                                             key={key}
-                                            className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59, 130, 246, 0.2)] transition"
+                                            className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
                                         >
                                             {skill}
                                         </span>
@@ -106,7 +106,7 @@ export const About = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold">
-                                    Frontend Web Development Intern at Motion cut (October 2024 - November 2024)
+                                        Frontend Web Development Intern at Motion cut (October 2024 - November 2024)
                                     </h4>
                                     <br />
                                     <p>
