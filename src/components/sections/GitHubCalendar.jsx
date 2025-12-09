@@ -66,7 +66,7 @@ export const GitHubCalendar = () => {
         fetchContributions();
     }, []);
 
-    // Show Only last 4 months on mobile
+    // Showing last 4 months on mobile
     const filteredData = useMemo(() => {
         if (!contributionData.length) return [];
 
