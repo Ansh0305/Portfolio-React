@@ -12,7 +12,7 @@ export const GitHubCalendar = () => {
 
     const username = "Ansh0305";
 
-    // Handle responsive sizing
+    // Responsive
     useEffect(() => {
         const updateCalendarSize = () => {
             const width = window.innerWidth;
@@ -66,12 +66,12 @@ export const GitHubCalendar = () => {
         fetchContributions();
     }, []);
 
-    // Filter data to show only last 4 months on mobile (fits iPhone SE)
+    // Show Only last 4 months on mobile
     const filteredData = useMemo(() => {
         if (!contributionData.length) return [];
 
         if (isMobile) {
-            // Get date 4 months ago for small screens
+
             const monthsAgo = new Date();
             monthsAgo.setMonth(monthsAgo.getMonth() - 4);
 
@@ -100,7 +100,7 @@ export const GitHubCalendar = () => {
                     </h2>
 
                     <div className="rounded-xl p-6 md:p-8 border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
-                        {/* Stats Header */}
+                        {/* Stats Head */}
                         <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
                             <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center">
@@ -139,7 +139,7 @@ export const GitHubCalendar = () => {
                             )}
                         </div>
 
-                        {/* Calendar Container */}
+                        {/* Calendar */}
                         <div className="calendar-container overflow-x-auto">
                             {loading && (
                                 <div className="flex items-center justify-center h-32">

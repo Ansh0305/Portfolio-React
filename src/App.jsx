@@ -16,7 +16,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
     <>
-      {!isLoading && <LoadingScreen onComplete={() => setIsLoading(true)} />}{" "}
+      {!isLoading && <LoadingScreen onComplete={() => setIsLoading(true)} />}
       <div className={`min-h-screen transition-opacity duration-700 ${isLoading ? "opacity-100" : "opacity-0"} bg-black text-gray-100`}>
 
         <NavBar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
@@ -24,7 +24,9 @@ function App() {
 
         <Home />
         <About />
+
         <GitHubCalendar />
+
         <Projects />
         <Contact />
         <Footer />
