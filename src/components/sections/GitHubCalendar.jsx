@@ -3,6 +3,7 @@ import { ActivityCalendar } from "react-activity-calendar";
 import { RevealOnScroll } from "../RevealOnScroll";
 
 export const GitHubCalendar = () => {
+    const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
     const [contributionData, setContributionData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -46,7 +47,7 @@ export const GitHubCalendar = () => {
             try {
                 setLoading(true);
                 const response = await fetch(
-                    `https://github-contributions-api.jogruber.de/v4/${username}?y=last`
+                    `https://github-contributions-api.jogruber.de/v4/${username}?y=${selectedYear}`
                 );
 
                 if (!response.ok) {
@@ -55,7 +56,7 @@ export const GitHubCalendar = () => {
 
                 const data = await response.json();
                 setContributionData(data.contributions);
-                setTotalContributions(data.total.lastYear);
+                setTotalContributions(data.total[selectedYear] || 0); // Access total for the specific year
                 setLoading(false);
             } catch (err) {
                 setError(err.message);
@@ -64,25 +65,27 @@ export const GitHubCalendar = () => {
         };
 
         fetchContributions();
-    }, []);
+    }, [selectedYear]);
 
     // Showing last 4 months on mobile
     const filteredData = useMemo(() => {
         if (!contributionData.length) return [];
 
-        if (isMobile) {
+        const currentYear = new Date().getFullYear();
 
-            const monthsAgo = new Date();
-            monthsAgo.setMonth(monthsAgo.getMonth() - 4);
+        if (isMobile) {
+            const isCurrentYear = selectedYear === currentYear;
+            const startDate = new Date(selectedYear, isCurrentYear ? 0 : 7, 1); // Jan 1 if current, else Aug 1
+            const endDate = new Date(selectedYear, isCurrentYear ? 4 : 11, 31); // May 31 if current, else Dec 31
 
             return contributionData.filter(item => {
                 const itemDate = new Date(item.date);
-                return itemDate >= monthsAgo;
+                return itemDate >= startDate && itemDate <= endDate;
             });
         }
 
         return contributionData;
-    }, [contributionData, isMobile]);
+    }, [contributionData, selectedYear, isMobile]);
 
     const customTheme = {
         dark: ["#161b22", "#0c4a6e", "#0369a1", "#0ea5e9", "#22d3ee"],
@@ -130,13 +133,29 @@ export const GitHubCalendar = () => {
                             {!loading && !error && (
                                 <div className="text-center sm:text-right">
                                     <p className="text-2xl font-bold text-white">
-                                        {totalContributions.toLocaleString()}
+                                        {totalContributions?.toLocaleString()}
                                     </p>
                                     <p className="text-gray-400 text-sm">
-                                        contributions in the last year
+                                        contributions in {selectedYear}
                                     </p>
                                 </div>
                             )}
+                        </div>
+
+                        <div className="flex justify-center gap-3 mb-6">
+                            {[2026, 2025, 2024, 2023].map((year) => (
+                                <button
+                                    key={year}
+                                    onClick={() => setSelectedYear(year)}
+                                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all
+                                        ${selectedYear === year
+                                            ? "bg-blue-500 text-white shadow-lg shadow-blue-500/25"
+                                            : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
+                                        }`}
+                                >
+                                    {year}
+                                </button>
+                            ))}
                         </div>
 
                         {/* Calendar */}
@@ -169,7 +188,7 @@ export const GitHubCalendar = () => {
                                         hideTotalCount={true}
                                         showWeekdayLabels={!isMobile}
                                         labels={{
-                                            totalCount: "{{count}} contributions in the last year",
+                                            totalCount: `{{count}} contributions in ${selectedYear}`,
                                         }}
                                     />
                                 </div>
