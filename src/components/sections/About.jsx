@@ -10,7 +10,7 @@ export const About = () => {
     return (
         <section
             id="about"
-            className="min-h-screen flex items-center justify-center py-20"
+            className="min-h-screen flex justify-center py-20"
         >
             <RevealOnScroll>
                 <div className="max-w-3xl mx-auto px-4">
@@ -104,7 +104,7 @@ export const About = () => {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div className="grid grid-cols-1 gap-6 mt-8">
                         <div className="p-6 rounded-xl border-white/10 border hover:translate-y-1 transition-all h-max">
                             <h3 className="text-xl font-bold mb-6">🏫 Education</h3>
                             <div className="space-y-6 text-gray-300">
@@ -174,7 +174,41 @@ export const About = () => {
                         <div className="p-6 rounded-xl border-white/10 border hover:translate-y-1 transition-all h-max">
                             <h3 className="text-xl font-bold mb-6">💼 Work Experience</h3>
                             <div className="space-y-6 text-gray-300">
-                                {/* Experience 1 */}
+
+                                {/* Murb */}
+                                <div className="relative pl-6 border-l-2 border-blue-500/30 hover:border-blue-500 transition-colors">
+                                    <div className="absolute -left-[9px] top-0 w-4 h-4 bg-blue-500 rounded-full border-2 border-gray-900"></div>
+                                    <div className="mb-2">
+                                        <h4 className="text-lg font-bold text-white">Murb</h4>
+                                        <p className="text-blue-400 font-medium">Tech Developer Intern</p>
+                                        <span className="inline-block mt-1 px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full">
+                                            📅 Nov 2025 - Present
+                                        </span>
+                                    </div>
+                                    <ul className="mt-3 space-y-2 text-sm">
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-blue-400 mt-1">▸</span>
+                                            <span>Collaborated in a 5-member team to build frontend features supporting MURB’s expansion into the
+                                                e-commerce/merchandise domain.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-blue-400 mt-1">▸</span>
+                                            <span>Replicated 6+ UI sections of MURB’s official website, focusing on visual consistency and reusable components</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-blue-400 mt-1">▸</span>
+                                            <span>Integrated 10+ form fields using React Hook Form and Zod for type-safe validation.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-blue-400 mt-1">▸</span>
+                                            <span>Delivered responsive UI components compatible across desktop and mobile devices using React, TypeScript,
+                                                Tailwind CSS, and Lucide icons.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                {/* Motion Cut */}
                                 <div className="relative pl-6 border-l-2 border-blue-500/30 hover:border-blue-500 transition-colors">
                                     <div className="absolute -left-[9px] top-0 w-4 h-4 bg-blue-500 rounded-full border-2 border-gray-900"></div>
                                     <div className="mb-2">
@@ -200,7 +234,7 @@ export const About = () => {
                                     </ul>
                                 </div>
 
-                                {/* Experience 2 */}
+                                {/* Swecha Telangana */}
                                 <div className="relative pl-6 border-l-2 border-blue-500/30 hover:border-blue-500 transition-colors">
                                     <div className="absolute -left-[9px] top-0 w-4 h-4 bg-blue-500 rounded-full border-2 border-gray-900"></div>
                                     <div className="mb-2">
