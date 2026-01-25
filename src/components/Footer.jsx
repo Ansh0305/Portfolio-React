@@ -15,7 +15,7 @@ export const Footer = () => {
 
                     {/* Copyright */}
                     <p className="text-gray-600 text-xs mt-2">
-                        © {currentYear} Ansh Sirigiri. All rights reserved.
+                        © {currentYear} Sirigiri Sai Ansh Raj. All rights reserved.
                     </p>
                 </div>
             </div>
