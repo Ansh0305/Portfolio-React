@@ -2,7 +2,7 @@ import { RevealOnScroll } from "../RevealOnScroll";
 import { TypeWriter } from "../TypeWriter";
 
 export const Home = () => {
-    const roles = ["Full Stack Developer", "React Enthusiast", "Problem Solver", "Tech Explorer"];
+    const roles = ["Aspiring Full Stack Developer", "Frontend Developer", "React Enthusiast", "Problem Solver"];
 
     return (
         <section
