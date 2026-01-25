@@ -56,7 +56,7 @@ export const GitHubCalendar = () => {
 
                 const data = await response.json();
                 setContributionData(data.contributions);
-                setTotalContributions(data.total[selectedYear]); // Access total for the specific year
+                setTotalContributions(data.total[selectedYear] || 0); // Access total for the specific year
                 setLoading(false);
             } catch (err) {
                 setError(err.message);
@@ -133,7 +133,7 @@ export const GitHubCalendar = () => {
                             {!loading && !error && (
                                 <div className="text-center sm:text-right">
                                     <p className="text-2xl font-bold text-white">
-                                        {totalContributions.toLocaleString()}
+                                        {totalContributions?.toLocaleString()}
                                     </p>
                                     <p className="text-gray-400 text-sm">
                                         contributions in {selectedYear}
