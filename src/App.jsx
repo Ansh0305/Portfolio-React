@@ -10,7 +10,7 @@ import { GitHubCalendar } from './components/sections/GitHubCalendar';
 import { Projects } from './components/sections/Projects';
 import { Contact } from './components/sections/Contact';
 import { Footer } from './Footer';
-// import { ChatWidget } from './components/ChatWidget';
+import { ChatWidget } from './components/ChatWidget';
 
 function App() {
   const [isLoading, setIsLoading] = useState(false)
@@ -32,8 +32,7 @@ function App() {
         <Contact />
         <Footer />
 
-        {/* AI Chatbot Widget */}
-        {/* <ChatWidget /> */}
+        <ChatWidget />
 
         <Analytics />
 
