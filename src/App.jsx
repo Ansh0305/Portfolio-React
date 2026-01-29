@@ -9,7 +9,7 @@ import { About } from './components/sections/About';
 import { GitHubCalendar } from './components/sections/GitHubCalendar';
 import { Projects } from './components/sections/Projects';
 import { Contact } from './components/sections/Contact';
-import { Footer } from './Footer';
+import { Footer } from './components/Footer';
 // import { ChatWidget } from './components/ChatWidget';
 
 function App() {

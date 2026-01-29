@@ -1,93 +1,117 @@
 import { RevealOnScroll } from "../RevealOnScroll"
 
 export const Projects = () => {
-    return <section
-        id="projects"
-        className="min-h-screen flex items-center justify-center py-20"
-    >
-        <RevealOnScroll>
-            <div className="max-w-5xl mx-auto px-4">
-                <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">Featured Projects</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    const projects = [
+        {
+            name: "IndiCamp",
+            description: "A full-stack campground discovery platform where users can create, explore, and review camping sites. Features interactive maps, secure authentication, cloud image storage, and community reviews.",
+            skills: ["HTML", "CSS", "JavaScript", "EJS", "Bootstrap", "Node.js", "MongoDB"],
+            github: "https://github.com/Ansh0305/CampGround",
+            live: "https://indicamp.onrender.com/",
+            image: "/projects/indicamp.png", // TODO: Add project screenshot
+        },
+        {
+            name: "AI-EmailGenerator",
+            description: "A powerful, intelligent web application designed to streamline and automate the process of writing professional emails. Leverages cutting-edge Large Language Models (LLMs) to generate email drafts from simple user prompts.",
+            skills: ["React", "Node.js", "TailwindCSS", "OpenAI-API"],
+            github: "https://github.com/Ansh0305/AI-EmailGenerator",
+            live: "https://ai-emailgenerator.netlify.app/",
+            image: "/projects/ai-email.png",
+        },
+        {
+            name: "MovieHuby",
+            description: "A hassle-free movie discovery experience. The app uses the TMDB API to fetch popular and searched movies, showing movie posters, rankings, and handling loading and error states seamlessly.",
+            skills: ["Vite + React", "CSS", "JavaScript", "Appwrite", "TMDB-API"],
+            github: "https://github.com/Ansh0305/MovieHub",
+            live: "https://moviehuby.netlify.app/",
+            image: "/projects/moviehub.png",
+        },
+        {
+            name: "Buyza",
+            description: "A full-stack e-commerce web application designed to deliver a smooth and user-friendly online shopping experience. Features product browsing, filtering, cart management, and secure checkout.",
+            skills: ["Next.js", "React", "Node.js", "TailwindCSS", "PostgreSQL", "Stripe"],
+            github: "https://github.com/Ansh0305/Buyza",
+            live: null, // Under construction
+            image: "/projects/buyza.jpg",
+            underConstruction: true,
+        },
+    ];
 
-                    <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
-                        <h3 className="text-xl font-bold mb-2">IndiCamp</h3>
-                        <p className="text-gray-400 mb-4">A full-stack campground discovery platform where users can create, explore, and review camping sites. Features interactive maps, secure authentication, cloud image storage, and community reviews. Built with Node.js, Express, MongoDB, and modern web technologies.</p>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                            {["HTML", "CSS", "JavaScript", "EJS", "Bootstrap", "Node.js", "MongoDB"].map((skills, key) => (
-                                <span
-                                    key={key}
-                                    className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
-                                    {skills}
-                                </span>
-                            ))}
-                        </div>
+    return (
+        <section
+            id="projects"
+            className="min-h-screen flex items-center justify-center py-20"
+        >
+            <RevealOnScroll>
+                <div className="max-w-5xl mx-auto px-4">
+                    <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+                        Featured Projects
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {projects.map((project, index) => (
+                            <div
+                                key={index}
+                                className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all relative"
+                            >
 
-                        <div className="flex justify-between items-center">
-                            <a href="https://github.com/Ansh0305/CampGround" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors my-4">View code →</a>
-                            <a href="https://indicamp.onrender.com/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors my-4">View project →</a>
-                        </div>
+                                {/* Project Image */}
+                                {project.image ? (
+                                    <img
+                                        src={project.image}
+                                        alt={project.name}
+                                        className="w-full h-40 object-cover rounded-lg mb-4"
+                                    />
+                                ) : (
+                                    <div className="w-full h-40 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg mb-4 flex items-center justify-center">
+                                        <span className="text-4xl font-bold text-white/30">
+                                            {project.name.charAt(0)}
+                                        </span>
+                                    </div>
+                                )}
+
+                                <h3 className="text-xl font-bold mb-2">{project.name}</h3>
+                                <p className="text-gray-400 mb-4 text-sm line-clamp-3">
+                                    {project.description}
+                                </p>
+
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                    {project.skills.map((skill, key) => (
+                                        <span
+                                            key={key}
+                                            className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
+                                        >
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                <div className="flex justify-between items-center">
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-400 hover:text-blue-300 transition-colors"
+                                    >
+                                        View Code →
+                                    </a>
+                                    {project.underConstruction ? (
+                                        <span className="text-yellow-500">Under Construction 🚧</span>
+                                    ) : (
+                                        <a
+                                            href={project.live}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-blue-400 hover:text-blue-300 transition-colors"
+                                        >
+                                            View Project →
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
                     </div>
-
-                    <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
-                        <h3 className="text-xl font-bold mb-2">MovieHuby</h3>
-                        <p className="text-gray-400 mb-4">MovieHub was built to provide a hassle-free movie discovery experience. The app uses the TMDB API to fetch popular and searched movies, showing movie posters, rankings, and handling loading and error states seamlessly. It also incorporates debounced search input and backend analytics integration (Appwrite).</p>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                            {["Vite + React", "CSS", "JavaScript", "Appwrite", "TMDB-API"].map((skills, key) => (
-                                <span
-                                    key={key}
-                                    className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
-                                    {skills}
-                                </span>
-                            ))}
-                        </div>
-
-                        <div className="flex justify-between items-center">
-                            <a href="https://github.com/Ansh0305/MovieHub" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors my-4">View code →</a>
-                            <a href="https://moviehuby.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors my-4">View project →</a>
-                        </div>
-                    </div>
-
-                    <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
-                        <h3 className="text-xl font-bold mb-2">AI-EmailGenerator</h3>
-                        <p className="text-gray-400 mb-4">The AI-EmailGenerator is a powerful, intelligent web application designed to streamline and automate the process of writing professional emails. Built with React and bundled using Vite for a fast development experience and dynamic user interface, it leverages cutting-edge Large Language Models (LLMs) to generate email drafts from simple user prompts.</p>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                            {["React", "Node.js", "TailwindCSS"," OpenAI-API"].map((skills, key) => (
-                                <span
-                                    key={key}
-                                    className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
-                                    {skills}
-                                </span>
-                            ))}
-                        </div>
-
-                        <div className="flex justify-between items-center">
-                            <a href="https://github.com/Ansh0305/AI-EmailGenerator" target="_blank" rel="noopener noreferrer" 
-                            className="text-blue-400 hover:text-blue-300 transition-colors my-4">View Code →</a>
-                            <a href="https://ai-emailgenerator.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors my-4">View project →</a>
-                        </div>
-                    </div>
-
-                    <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
-                        <h3 className="text-xl font-bold mb-2">Buyza</h3>
-                        <p className="text-gray-400 mb-4">Buyza is a full-stack e-commerce web application designed to deliver a smooth and user-friendly online shopping experience. It features product browsing, filtering, cart management, and secure checkout with an emphasis on clean UI, performance, and scalability. The project demonstrates modern web development practices and a focus on usability and real-world e-commerce functionality.</p>
-                        {/* <div className="flex flex-wrap gap-2 mb-4">
-                            {["HTML", "CSS", "JavaScript"].map((skills, key) => (
-                                <span
-                                    key={key}
-                                    className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
-                                    {skills}
-                                </span>
-                            ))}
-                        </div> */}
-
-                        <div className="flex justify-between items-center">
-                            <a href="https://github.com/Ansh0305/Buyza" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors my-4">Under Construction🚧</a>
-                        </div>
-                    </div>
-
                 </div>
-            </div>
-        </RevealOnScroll>
-    </section>
-}
+            </RevealOnScroll>
+        </section>
+    );
+};

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
 
 
@@ -9,8 +11,12 @@ export const Contact = () => {
         email: "",
         message: "",
     });
+    const [isLoading, setIsLoading] = useState(false);
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        setIsLoading(true);
+
         emailjs
             .sendForm(
                 import.meta.env.VITE_SERVICE_ID,
@@ -19,10 +25,15 @@ export const Contact = () => {
                 import.meta.env.VITE_PUBLIC_KEY
             )
             .then((result) => {
-                alert("Message Sent!");
+                toast.success("Message sent successfully! 🎉");
                 setFormData({ name: "", email: "", message: "" });
             })
-            .catch(() => alert("Oops! Something went wrong. Please try again."));
+            .catch(() => {
+                toast.error("Oops! Something went wrong. Please try again.");
+            })
+            .finally(() => {
+                setIsLoading(false);
+            });
     };
 
 
@@ -31,6 +42,18 @@ export const Contact = () => {
             id="contact"
             className="min-h-screen flex items-center justify-center py-20"
         >
+            <ToastContainer
+                position="top-right"
+                autoClose={4000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
             <RevealOnScroll>
                 <div className="px-4 max-w-md w-full mx-auto">
                     <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
@@ -81,9 +104,20 @@ export const Contact = () => {
                         </div>
                         <button
                             type="submit"
-                            className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+                            disabled={isLoading}
+                            className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 flex items-center justify-center gap-2"
                         >
-                            Send Message
+                            {isLoading ? (
+                                <>
+                                    <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                    </svg>
+                                    Sending...
+                                </>
+                            ) : (
+                                "Send Message"
+                            )}
                         </button>
                     </form>
                     <div className="mt-10 flex justify-center gap-10 text-white">
