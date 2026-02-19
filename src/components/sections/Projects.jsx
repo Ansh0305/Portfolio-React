@@ -3,6 +3,14 @@ import { RevealOnScroll } from "../RevealOnScroll"
 export const Projects = () => {
     const projects = [
         {
+            name: "Velox",
+            description: "Velox is a secure realtime chat application with ephemeral rooms, instant messaging, and live event streaming. Built using Next.js, Elysia, and Redis, it leverages Redis pub/sub and TTL-based storage to deliver fast, scalable, and reliable realtime communication., showing movie posters, rankings, and handling loading and error states seamlessly.",
+            skills: ["Next.js", "TailwindCSS", "ElysiaJS", "Redis(upstash)", "Zod"],
+            github: "https://github.com/Ansh0305/Velox",
+            live: "https://velox-chat.vercel.app/",
+            image: "/projects/velox.png",
+        },
+        {
             name: "IndiCamp",
             description: "A full-stack campground discovery platform where users can create, explore, and review camping sites. Features interactive maps, secure authentication, cloud image storage, and community reviews.",
             skills: ["HTML", "CSS", "JavaScript", "EJS", "Bootstrap", "Node.js", "MongoDB"],
@@ -17,14 +25,6 @@ export const Projects = () => {
             github: "https://github.com/Ansh0305/AI-EmailGenerator",
             live: "https://ai-emailgenerator.netlify.app/",
             image: "/projects/ai-email.png",
-        },
-        {
-            name: "MovieHuby",
-            description: "A hassle-free movie discovery experience. The app uses the TMDB API to fetch popular and searched movies, showing movie posters, rankings, and handling loading and error states seamlessly.",
-            skills: ["Vite + React", "CSS", "JavaScript", "Appwrite", "TMDB-API"],
-            github: "https://github.com/Ansh0305/MovieHub",
-            live: "https://moviehuby.netlify.app/",
-            image: "/projects/moviehub.png",
         },
         {
             name: "Buyza",
