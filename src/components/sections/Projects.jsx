@@ -3,7 +3,7 @@ import { RevealOnScroll } from "../RevealOnScroll"
 export const Projects = () => {
     const projects = [
         {
-            name: "Velox",
+            name: "Velox - Real-Time Chat Application",
             description: "Velox is a secure realtime chat application with ephemeral rooms, instant messaging, and live event streaming. Built using Next.js, Elysia, and Redis, it leverages Redis pub/sub and TTL-based storage to deliver fast, scalable, and reliable realtime communication., showing movie posters, rankings, and handling loading and error states seamlessly.",
             skills: ["Next.js", "TailwindCSS", "ElysiaJS", "Redis(upstash)", "Zod"],
             github: "https://github.com/Ansh0305/Velox",
@@ -27,7 +27,7 @@ export const Projects = () => {
             image: "/projects/ai-email.png",
         },
         {
-            name: "Buyza",
+            name: "Buyza - Ecommerce Web Application",
             description: "A full-stack e-commerce web application designed to deliver a smooth and user-friendly online shopping experience. Features product browsing, filtering, cart management, and secure checkout.",
             skills: ["Next.js", "React", "Node.js", "TailwindCSS", "PostgreSQL", "Stripe"],
             github: "https://github.com/Ansh0305/Buyza",
