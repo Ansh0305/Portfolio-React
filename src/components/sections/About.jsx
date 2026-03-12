@@ -119,7 +119,7 @@ export const About = () => {
                                                 📅 2022 - 2026
                                             </span>
                                             <span className="inline-block px-3 py-1 bg-green-500/10 text-green-400 text-xs rounded-full">
-                                                📊 CGPA: 8.01
+                                                📊 CGPA: 8.07
                                             </span>
                                         </div>
                                     </div>
@@ -182,7 +182,7 @@ export const About = () => {
                                         <h4 className="text-lg font-bold text-white">Murb</h4>
                                         <p className="text-blue-400 font-medium">Tech Developer Intern</p>
                                         <span className="inline-block mt-1 px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full">
-                                            📅 Nov 2025 - Present
+                                            📅 Nov 2025 - Feb 2026
                                         </span>
                                     </div>
                                     <ul className="mt-3 space-y-2 text-sm">
